@@ -1,6 +1,7 @@
-## KMM_File_IO
+## LHFile
 Support for file handing in Kotlin multiplatform
-
+##
+File I/O handing for KMM
 ### LHFile
 ```kotlin
 expect class LHFile(path: String) {
@@ -34,7 +35,7 @@ expect class LHFileWriter (path: String) {
     fun writeBreakLine()
 }
 ```
-### Test
+## Test
 ```kotlin
 // LHFileTest.kt
 fun write(data: String) {
