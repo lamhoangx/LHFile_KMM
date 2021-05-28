@@ -30,5 +30,10 @@ class MainActivity : AppCompatActivity() {
 
         })
         PermissionUtils.rationalRequestStoragePermission(this)
+
+        LHFileTest(pathFile).apply {
+            write("Hello world!")
+            read()
+        }
     }
 }

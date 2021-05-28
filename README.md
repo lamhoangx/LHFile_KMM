@@ -53,7 +53,7 @@ fun write(data: String) {
     }
 
     fun read() {
-        val reader = LHFileReader(pathFile)
+        val reader = LHFileReader(path = pathFile)
         reader?.apply {
             if(isReady()) {
                 var line: String? = null
@@ -71,8 +71,8 @@ Platform
 ```kotlin
 // Android
 val pathFile = "${baseContext.filesDir.absolutePath}/kmm_file_io.test"
-val lhFile = LHFileTest(pathFile)
-lhFile.apply {
+
+LHFileTest(pathFile).apply {
     write("Hello world!")
     read()
 }
