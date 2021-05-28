@@ -12,7 +12,7 @@ struct ContentView: View {
             let pathDir = FileManager.default.urls(
                 for: .documentDirectory,
                 in: .userDomainMask
-            )[0].appendingPathComponent("lhfile")
+            )[0]
             
             let lhFile = LHFileTest(pathFile: "\(pathDir.path)/kmm_file_io.test")
             lhFile.write(data: "Hello world!")
