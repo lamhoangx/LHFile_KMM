@@ -18,16 +18,10 @@ class LHFileTest(
         writer?.apply {
             if(isReady()) {
                 LHTimber.d("WRITING...")
-                writer?.write("1: $data")
-                writeBreakLine()
-                writer?.write("2: $data")
-                writeBreakLine()
-                writer?.write("3: $data")
-                writeBreakLine()
-                writer?.write("4: $data")
-                writeBreakLine()
-                writer?.write("5: $data")
-                writeBreakLine()
+                for (i in 1..5) {
+                    writer?.write("$i: $data")
+                    writeBreakLine()
+                }
             }
         }
         writer?.close()

@@ -1,5 +1,6 @@
 package me.lamhoangx.expect.wrapper.file
 
+import me.lamhoangx.expect.wrapper.LHTimber
 import java.io.File
 import java.io.FileOutputStream
 
@@ -17,6 +18,7 @@ actual class LHFileWriter actual constructor(path: String) {
 
         fileOutputStream = FileOutputStream(file)
         ready = true
+        LHTimber.d("FileWriter: $path")
     }
 
     actual fun isReady(): Boolean {
@@ -28,7 +30,10 @@ actual class LHFileWriter actual constructor(path: String) {
     }
 
     actual fun write(data: String) {
-        fileOutputStream?.write(data.toByteArray())
+        fileOutputStream?.apply {
+            LHTimber.d("WRITE: $data")
+            write(data.toByteArray())
+        }
     }
 
     actual fun writeBreakLine() {

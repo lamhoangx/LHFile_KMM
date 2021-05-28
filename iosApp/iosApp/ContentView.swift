@@ -1,5 +1,5 @@
 import SwiftUI
-import shared
+import lhfile
 
 func greet() -> String {
     return Greeting().greeting()
@@ -7,7 +7,17 @@ func greet() -> String {
 
 struct ContentView: View {
     var body: some View {
-        Text(greet())
+        
+        Button("--> Hello world!", action: {
+            let pathDir = FileManager.default.urls(
+                for: .documentDirectory,
+                in: .userDomainMask
+            )[0].appendingPathComponent("lhfile")
+            
+            let lhFile = LHFileTest(pathFile: "\(pathDir.path)/kmm_file_io.test")
+            lhFile.write(data: "Hello world!")
+            lhFile.read()
+        })
     }
 }
 
