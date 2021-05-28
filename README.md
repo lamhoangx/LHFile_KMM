@@ -13,7 +13,6 @@ expect class LHFile(path: String) {
     fun createNewFile()
 }
 ```
-## Utils
 ### Reader
 ```kotlin
 expect class LHFileReader (path: String) {
